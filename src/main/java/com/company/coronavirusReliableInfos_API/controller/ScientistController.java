@@ -3,7 +3,6 @@ package com.company.coronavirusReliableInfos_API.controller;
 import com.company.coronavirusReliableInfos_API.exceptions.ResourceNotFoundException;
 import com.company.coronavirusReliableInfos_API.model.Scientist;
 import com.company.coronavirusReliableInfos_API.repository.ScientistRepository;
-import org.hibernate.ResourceClosedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,33 +13,33 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1")
 public class ScientistController {
 
     @Autowired
     private ScientistRepository scientistRepository;
 
     // get scientist
-    @GetMapping("scientists")
+    @GetMapping("/scientists")
     public List<Scientist> getAllScientists() {
         return this.scientistRepository.findAll();
     }
 
     // get scientist by id
-    @GetMapping("scientists/{id}")
+    @GetMapping("/scientists/{id}")
     public ResponseEntity<Scientist> getScientistById(@PathVariable(value = "id") Long scientistId) throws ResourceNotFoundException {
         Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
         return ResponseEntity.ok().body(scientist);
     }
 
     // save scientist
-    @PostMapping("scientists")
-    public Scientist createScientist(@RequestBody Scientist scientist) {
+    @PostMapping(path = "/scientists", consumes = "application/json")
+    public Scientist createScientist(@Valid @RequestBody Scientist scientist) {
         return this.scientistRepository.save(scientist);
     }
 
     // update scientist
-    @PutMapping("scientists/{id}")
+    @PutMapping("/scientists/{id}")
     public ResponseEntity<Scientist> updateScientist(@PathVariable(value = "id") Long scientistId, @Valid @RequestBody Scientist scientistDetails) throws ResourceNotFoundException {
         Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
 
@@ -54,7 +53,7 @@ public class ScientistController {
     }
 
     // delete scientist
-    @DeleteMapping("scientists/{id}")
+    @DeleteMapping("/scientists/{id}")
     public Map<String, Boolean> deleteScientist(@PathVariable(value = "id") Long scientistId) throws ResourceNotFoundException {
         Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
 

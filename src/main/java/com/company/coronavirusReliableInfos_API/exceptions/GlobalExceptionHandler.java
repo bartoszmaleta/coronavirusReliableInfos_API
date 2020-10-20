@@ -13,13 +13,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<?> resourceNotFoundException (ResourceNotFoundException ex, WebRequest request) {
+        System.out.println("ResourceNot");
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> globalExceptionHandler (Exception ex, WebRequest request) {
+        System.out.println("Exce");
         ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+        System.out.println(ex.getLocalizedMessage());
+        System.out.println(ex.getStackTrace());
+        System.out.println(ex.toString());
+        System.out.println(ex.getCause());
         return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
     }
 }
