@@ -1,13 +1,13 @@
 package com.company.coronavirusReliableInfos_API.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "journals")
 public class Journal {
 
@@ -18,15 +18,6 @@ public class Journal {
     private String name;
 
     private String link;
-
-    public Journal() {
-    }
-
-    public Journal(long id, String name, String link) {
-        this.id = id;
-        this.name = name;
-        this.link = link;
-    }
 
     public Journal(String name, String link) {
         this.name = name;

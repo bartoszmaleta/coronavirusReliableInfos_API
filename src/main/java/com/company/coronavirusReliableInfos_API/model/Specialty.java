@@ -1,13 +1,13 @@
 package com.company.coronavirusReliableInfos_API.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "specialties")
 public class Specialty {
 
@@ -16,9 +16,6 @@ public class Specialty {
     private long id;
 
     private String name;
-
-    public Specialty() {
-    }
 
     public Specialty(String name) {
         this.name = name;

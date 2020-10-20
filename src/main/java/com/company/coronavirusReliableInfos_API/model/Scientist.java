@@ -1,15 +1,15 @@
 package com.company.coronavirusReliableInfos_API.model;
 
 import com.fasterxml.jackson.annotation.JsonTypeId;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 //import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "scientists")
 public class Scientist {
 
@@ -28,8 +28,6 @@ public class Scientist {
     private String country;
 
     private int rating;
-
-    public Scientist() {}
 
     public Scientist(String firstName, String lastName, String link, String country, int rating) {
         this.firstName = firstName;

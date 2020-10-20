@@ -1,13 +1,13 @@
 package com.company.coronavirusReliableInfos_API.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "articles")
 public class Article {
 

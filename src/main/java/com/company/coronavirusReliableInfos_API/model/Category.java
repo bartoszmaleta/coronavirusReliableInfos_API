@@ -1,13 +1,13 @@
 package com.company.coronavirusReliableInfos_API.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "categories")
 public class Category {
 
@@ -17,15 +17,7 @@ public class Category {
 
     private String name;
 
-    public Category() {
-    }
-
     public Category(String name) {
-        this.name = name;
-    }
-
-    public Category(long id, String name) {
-        this.id = id;
         this.name = name;
     }
 

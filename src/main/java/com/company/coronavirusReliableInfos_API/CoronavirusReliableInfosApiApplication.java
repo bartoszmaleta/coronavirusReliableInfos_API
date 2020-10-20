@@ -1,5 +1,6 @@
 package com.company.coronavirusReliableInfos_API;
 
+import com.company.coronavirusReliableInfos_API.model.Category;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
