@@ -18,3 +18,7 @@ public class CoronavirusReliableInfosApiApplication {
 		return "<h1>Hello, world!</h1>";
 	}
 }
+
+
+// TODO:
+// - Article model and Scientist model relation
