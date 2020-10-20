@@ -9,7 +9,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -52,6 +54,16 @@ public class ScientistController {
     }
 
     // delete scientist
+    @DeleteMapping("scientists/{id}")
+    public Map<String, Boolean> deleteScientist(@PathVariable(value = "id") Long scientistId) throws ResourceNotFoundException {
+        Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
+
+        this.scientistRepository.delete(scientist);
+
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
 
 
 }
