@@ -1,4 +1,4 @@
-package com.company.coronavirusReliableInfos_API.model;
+package com.company.coronavirusReliableInfos_API.model.testSprintClass;
 
 public class HelloMessage {
     public static String getMessage(String name) {

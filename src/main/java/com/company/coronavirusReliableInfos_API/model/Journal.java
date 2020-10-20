@@ -24,12 +24,5 @@ public class Journal {
         this.link = link;
     }
 
-    @Override
-    public String toString() {
-        return "Journal{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", link='" + link + '\'' +
-                '}';
-    }
+
 }

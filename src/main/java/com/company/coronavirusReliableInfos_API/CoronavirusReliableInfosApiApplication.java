@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CoronavirusReliableInfosApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoronavirusReliableInfosApiApplication.class, args);
+
+//		Category category = new Category(1, "asd");
+//		System.out.println(category.toString());
+				SpringApplication.run(CoronavirusReliableInfosApiApplication.class, args);
 	}
 	// localhost:8080/hello
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)

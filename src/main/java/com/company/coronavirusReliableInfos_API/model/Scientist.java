@@ -37,17 +37,4 @@ public class Scientist {
         this.rating = rating;
     }
 
-
-
-    @Override
-    public String toString() {
-        return "Scientist{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", link='" + link + '\'' +
-                ", country='" + country + '\'' +
-                ", rating=" + rating +
-                '}';
-    }
 }

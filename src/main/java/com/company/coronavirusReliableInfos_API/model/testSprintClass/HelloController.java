@@ -1,6 +1,6 @@
-package com.company.coronavirusReliableInfos_API.controller;
+package com.company.coronavirusReliableInfos_API.model.testSprintClass;
 
-import com.company.coronavirusReliableInfos_API.model.HelloMessage;
+import com.company.coronavirusReliableInfos_API.model.testSprintClass.HelloMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

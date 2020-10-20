@@ -21,11 +21,4 @@ public class Specialty {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Specialty{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }
