@@ -6,11 +6,9 @@ import com.company.coronavirusReliableInfos_API.repository.ScientistRepository;
 import org.hibernate.ResourceClosedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,8 +30,27 @@ public class ScientistController {
         Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
         return ResponseEntity.ok().body(scientist);
     }
+
     // save scientist
+    @PostMapping("scientists")
+    public Scientist createScientist(@RequestBody Scientist scientist) {
+        return this.scientistRepository.save(scientist);
+    }
+
     // update scientist
+    @PutMapping("scientists/{id}")
+    public ResponseEntity<Scientist> updateScientist(@PathVariable(value = "id") Long scientistId, @Valid @RequestBody Scientist scientistDetails) throws ResourceNotFoundException {
+        Scientist scientist = scientistRepository.findById(scientistId).orElseThrow( () -> new ResourceNotFoundException("Scientist not found for this id = " + scientistId));
+
+        scientist.setFirstName(scientistDetails.getFirstName());
+        scientist.setLastName(scientistDetails.getLastName());
+        scientist.setLink(scientistDetails.getLink());
+        scientist.setCountry(scientistDetails.getCountry());
+        scientist.setRating(scientistDetails.getRating());
+
+        return ResponseEntity.ok(this.scientistRepository.save(scientist));
+    }
+
     // delete scientist
 
 

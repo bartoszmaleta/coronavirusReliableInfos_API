@@ -1,9 +1,7 @@
 package com.company.coronavirusReliableInfos_API.model;
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import lombok.*;
 
-//import javax.persistence.Entity;
 import javax.persistence.*;
 
 @Entity
