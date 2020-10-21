@@ -48,6 +48,7 @@ public class ScientistController {
         scientist.setLink(scientistDetails.getLink());
         scientist.setCountry(scientistDetails.getCountry());
         scientist.setRating(scientistDetails.getRating());
+        scientist.setArticles(scientistDetails.getArticles());
 
         return ResponseEntity.ok(this.scientistRepository.save(scientist));
     }

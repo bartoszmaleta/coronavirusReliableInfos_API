@@ -1,0 +1,33 @@
+[
+    {
+        "id": 3,
+        "firstName": "Gideon",
+        "lastName": "Meyerowitz-Katz",
+        "link": "https://twitter.com/GidMK",
+        "country": "Global",
+        "rating": 10,
+        "articles": [
+            {
+                "id": 1,
+                "title": "The Facts About Herd Immunity and COVID-19",
+                "link": "https://medium.com/@gidmk/the-facts-about-herd-immunity-and-covid-19-3230616b70a3",
+                "rating": 9,
+                "category": {
+                    "id": 1,
+                    "name": "Coronavirus"
+                },
+                "journal": {
+                    "id": 3,
+                    "name": "Own Blog",
+                    "link": ""
+                }
+            }
+        ],
+        "specialties": [
+            {
+                "id": 1,
+                "name": "Epidemiology"
+            }
+        ]
+    }
+]
