@@ -34,3 +34,6 @@ public class CoronavirusReliableInfosApiApplication {
 // - Article model and Scientist model relation
 // - how to fill db
 // - relations between classes!
+
+//https://twitter.com/EricTopol
+//https://twitter.com/jburnmurdoch
