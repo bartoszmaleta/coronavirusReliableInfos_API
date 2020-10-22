@@ -25,7 +25,7 @@ public class CategoryController {
         return this.categoryRepository.findAll();
     }
 
-    // GET Category by id
+    // GET category by id
     @GetMapping("/categories/{id}")
     public ResponseEntity<Category> getCategoryById(@PathVariable(value = "id") Long categoryId) throws ResourceNotFoundException {
         Category category = categoryRepository.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category not found for this id = " + categoryId));
