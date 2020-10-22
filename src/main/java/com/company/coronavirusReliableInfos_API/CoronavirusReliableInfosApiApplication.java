@@ -29,3 +29,10 @@ public class CoronavirusReliableInfosApiApplication {
 // - relations between classes!
 // - DTO serialzie @IgnoreJson
 // - custom serialization
+
+//https://twitter.com/EricTopol
+//https://twitter.com/jburnmurdoch
+
+//    Udało mi się zrobić relacje ManyToMany, jednak jeszce nie działełem z tym JsonIgnore. Dzisiaj będę!
+//
+//        Powiedz mi jednak, czy ja powininem wykonać CRUDA dla wszystkich Encji?
