@@ -27,7 +27,7 @@ public class SpecialtyController {
 
     // GET specialty by id
     @GetMapping("/specialties/{id}")
-    public ResponseEntity<Specialty> getCategoryById(@PathVariable(value = "id") Long specialtyId) throws ResourceNotFoundException {
+    public ResponseEntity<Specialty> getSpecialtyById(@PathVariable(value = "id") Long specialtyId) throws ResourceNotFoundException {
         Specialty specialty = specialtyRepository.findById(specialtyId).orElseThrow(() -> new ResourceNotFoundException("Specialty not found for this id = " + specialtyId));
         return ResponseEntity.ok().body(specialty);
     }
