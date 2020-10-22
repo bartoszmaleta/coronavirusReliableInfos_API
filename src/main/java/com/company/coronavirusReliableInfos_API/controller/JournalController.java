@@ -52,7 +52,7 @@ public class JournalController {
     }
 
     // DELETE journal
-    @DeleteMapping("journals/{id}")
+    @DeleteMapping("/journals/{id}")
     public Map<String, Boolean> deleteJournal(@PathVariable (value = "id") Long journalId) throws ResourceNotFoundException {
         Journal journal = journalRepository.findById(journalId).orElseThrow( () ->
                 new ResourceNotFoundException("Journal not found for this id = " + journalId));
