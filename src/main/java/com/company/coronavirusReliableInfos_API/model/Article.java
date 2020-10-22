@@ -1,6 +1,9 @@
 package com.company.coronavirusReliableInfos_API.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,6 +12,10 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 @Table(name = "articles")
 public class Article {
 
@@ -18,7 +25,8 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "scientist_id")
-    @JsonIgnore
+//    @JsonIgnore
+    @JsonManagedReference
     private Scientist scientist;
 
     private String title;
@@ -29,10 +37,12 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonManagedReference
     private Category category;
 
     @ManyToOne
     @JoinColumn(name = "journal_id")
+    @JsonManagedReference
     private Journal journal;
 
     public Article(Scientist scientist, String title, String link, int rating, Category category, Journal journal) {

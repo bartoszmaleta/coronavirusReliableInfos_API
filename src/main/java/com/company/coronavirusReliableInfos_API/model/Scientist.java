@@ -1,5 +1,8 @@
 package com.company.coronavirusReliableInfos_API.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,6 +12,10 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 @Table(name = "scientists")
 public class Scientist {
 
@@ -39,6 +46,7 @@ public class Scientist {
             joinColumns = @JoinColumn(name = "scientist_id"),
             inverseJoinColumns = @JoinColumn(name = "specialty_id")
     )
+    @JsonBackReference
     private Set<Specialty> specialties;
 
     public Scientist(String firstName, String lastName, String link, String country, int rating) {

@@ -1,6 +1,9 @@
 package com.company.coronavirusReliableInfos_API.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,6 +14,10 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 @Table(name = "specialties")
 public class Specialty {
 
@@ -22,7 +29,8 @@ public class Specialty {
     private String name;
 
     @ManyToMany(mappedBy = "specialties")
-    @JsonIgnore
+//    @JsonIgnore
+    @JsonBackReference
     private Set<Scientist> scientists;
 
     public Specialty(String name) {
