@@ -31,8 +31,10 @@ public class Scientist {
 
     private String link;
 
+    // TODO: add country table
     private String country;
 
+    // TODO: add another table when i calculate rating on the fly based on ratings there
     private int rating;
 
     @OneToMany(mappedBy = "scientist", cascade = CascadeType.REMOVE)

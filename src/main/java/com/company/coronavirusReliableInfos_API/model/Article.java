@@ -24,8 +24,8 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "scientist_id")
-//    @JsonIgnore
-    @JsonManagedReference
+    @JsonIgnore
+//    @JsonManagedReference
     private Scientist scientist;
 
     private String title;
@@ -36,12 +36,12 @@ public class Article {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    @JsonManagedReference
+//    @JsonManagedReference
     private Category category;
 
     @ManyToOne
     @JoinColumn(name = "journal_id")
-    @JsonManagedReference
+//    @JsonManagedReference
     private Journal journal;
 
     public Article(Scientist scientist, String title, String link, int rating, Category category, Journal journal) {

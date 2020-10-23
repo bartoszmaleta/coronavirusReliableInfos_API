@@ -36,3 +36,5 @@ public class CoronavirusReliableInfosApiApplication {
 //    Udało mi się zrobić relacje ManyToMany, jednak jeszce nie działełem z tym JsonIgnore. Dzisiaj będę!
 //
 //        Powiedz mi jednak, czy ja powininem wykonać CRUDA dla wszystkich Encji?
+
+// - why indexing in db ends as last index! but in different tables?

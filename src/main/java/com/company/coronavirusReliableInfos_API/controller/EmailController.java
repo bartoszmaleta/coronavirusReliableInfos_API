@@ -41,7 +41,8 @@ public class EmailController {
         msg.setSentDate(new Date());
 
         MimeBodyPart messageBodyPart = new MimeBodyPart();
-        messageBodyPart.setContent("Tutorials point email", "text/html");
+        messageBodyPart.setContent("To whom it may concern,\nHere is loggs report.\n\nBest regards\nReliable infos Inc.", "text/html");
+        messageBodyPart.setContent("To whom it may concern,\nHere is loggs report.\n\nBest regards\nReliable infos Inc.", "text/html");
 
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(messageBodyPart);

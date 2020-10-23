@@ -29,8 +29,8 @@ public class Journal {
     private String link;
 
     @OneToMany(mappedBy = "journal")
-//    @JsonIgnore
-    @JsonBackReference
+    @JsonIgnore
+//    @JsonBackReference
     private List<Article> articles;
 
     public Journal(String name, String link) {

@@ -27,8 +27,8 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-//    @JsonIgnore
-    @JsonBackReference
+    @JsonIgnore
+//    @JsonBackReference
     private List<Article> articles;
 
     public Category(String name) {
