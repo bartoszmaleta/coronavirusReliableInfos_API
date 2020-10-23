@@ -36,12 +36,33 @@ public class CoronavirusReliableInfosApiApplication {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // TODO:
 // - Article model and Scientist model relation
 // - how to fill db
 // - relations between classes!
 // - DTO serialzie @IgnoreJson
 // - custom serialization
+// - create service layer
 
 //https://twitter.com/EricTopol
 //https://twitter.com/jburnmurdoch
@@ -51,3 +72,4 @@ public class CoronavirusReliableInfosApiApplication {
 //        Powiedz mi jednak, czy ja powininem wykonać CRUDA dla wszystkich Encji?
 
 // - why indexing in db ends as last index! but in different tables?
+

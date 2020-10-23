@@ -20,6 +20,7 @@ import java.util.Map;
 public class ArticleController {
 
     private static final Logger log = Logger.getLogger(ArticleController.class.getName());
+    private String messageToLog;
 
     @Autowired
     private ArticleRepository articleRepository;
@@ -27,7 +28,7 @@ public class ArticleController {
     // GET all articles
     @GetMapping("/articles")
     public List<Article> getAllArticles() {
-        String messageToLog = String.format("%s, GET all articles invoked", LoggerConfiguration.dtf.format(LocalDateTime.now()));
+        messageToLog = String.format("%s, GET all articles invoked", LoggerConfiguration.dtf.format(LocalDateTime.now()));
         log.info(messageToLog);
 
         return this.articleRepository.findAll();
@@ -36,9 +37,10 @@ public class ArticleController {
     // GET article by id
     @GetMapping("/articles/{id}")
     public ResponseEntity<Article> getArticleById(@PathVariable(value = "id") Long articleId) throws ResourceNotFoundException {
-        Article article = articleRepository.findById(articleId).orElseThrow(() -> new ResourceNotFoundException("article not found for this id = " + articleId));
+        Article article = articleRepository.findById(articleId)
+                .orElseThrow(() -> new ResourceNotFoundException("article not found for this id = " + articleId));
 
-        String messageToLog = String.format("%s, GET article by id invoked", LoggerConfiguration.dtf.format(LocalDateTime.now()));
+        messageToLog = String.format("%s, GET article by id invoked", LoggerConfiguration.dtf.format(LocalDateTime.now()));
         log.info(messageToLog);
 
         return ResponseEntity.ok().body(article);

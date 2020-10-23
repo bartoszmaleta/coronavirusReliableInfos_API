@@ -1,0 +1,16 @@
+-------- Loggs report on gmail
+https://mail.google.com/mail/u/0/#search/Loggs+report
+
+-------- Swagger API
+http://localhost:8085/swagger-ui.html#/
+
+
+
+
+
+
+
+
+
+
+
