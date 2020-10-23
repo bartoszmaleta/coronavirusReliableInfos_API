@@ -1,0 +1,13 @@
+https://mail.google.com/mail/u/0/#search/Loggs+report
+
+http://localhost:8085/coronavirusReliableInfos_API/api/v2/api-docs
+
+
+
+
+
+
+
+
+
+
