@@ -1,4 +1,4 @@
-package com.company.coronavirusReliableInfos_API;
+package com.company.coronavirusReliableInfos_API.configuration;
 
 import com.company.coronavirusReliableInfos_API.controller.ArticleController;
 import org.apache.log4j.Logger;

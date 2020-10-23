@@ -1,6 +1,6 @@
 package com.company.coronavirusReliableInfos_API.controller;
 
-import com.company.coronavirusReliableInfos_API.LoggerConfiguration;
+import com.company.coronavirusReliableInfos_API.configuration.LoggerConfiguration;
 import com.company.coronavirusReliableInfos_API.exceptions.ResourceNotFoundException;
 import com.company.coronavirusReliableInfos_API.model.Category;
 import com.company.coronavirusReliableInfos_API.repository.CategoryRepository;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

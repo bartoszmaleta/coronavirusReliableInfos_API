@@ -1,6 +1,6 @@
 package com.company.coronavirusReliableInfos_API.controller;
 
-import com.company.coronavirusReliableInfos_API.LoggerConfiguration;
+import com.company.coronavirusReliableInfos_API.configuration.LoggerConfiguration;
 import com.company.coronavirusReliableInfos_API.exceptions.ResourceNotFoundException;
 import com.company.coronavirusReliableInfos_API.model.Journal;
 import com.company.coronavirusReliableInfos_API.repository.JournalRepository;

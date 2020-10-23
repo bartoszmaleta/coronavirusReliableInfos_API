@@ -1,6 +1,6 @@
 package com.company.coronavirusReliableInfos_API.exceptions;
 
-import com.company.coronavirusReliableInfos_API.LoggerConfiguration;
+import com.company.coronavirusReliableInfos_API.configuration.LoggerConfiguration;
 import com.company.coronavirusReliableInfos_API.controller.ArticleController;
 import org.apache.log4j.Logger;
 import org.springframework.http.HttpStatus;
