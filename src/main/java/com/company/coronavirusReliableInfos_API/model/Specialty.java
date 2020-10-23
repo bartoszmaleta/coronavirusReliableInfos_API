@@ -13,7 +13,6 @@ import java.util.Set;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
@@ -29,8 +28,8 @@ public class Specialty {
     private String name;
 
     @ManyToMany(mappedBy = "specialties")
-//    @JsonIgnore
-    @JsonBackReference
+    @JsonIgnore
+//    @JsonBackReference
     private Set<Scientist> scientists;
 
     public Specialty(String name) {

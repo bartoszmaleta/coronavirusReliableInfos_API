@@ -46,7 +46,7 @@ public class Scientist {
             joinColumns = @JoinColumn(name = "scientist_id"),
             inverseJoinColumns = @JoinColumn(name = "specialty_id")
     )
-    @JsonBackReference
+//    @JsonBackReference
     private Set<Specialty> specialties;
 
     public Scientist(String firstName, String lastName, String link, String country, int rating) {

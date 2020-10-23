@@ -1,0 +1,2 @@
+2020/10/23 03:37:29, Resource not found exception invoked
+Caused by: com.company.coronavirusReliableInfos_API.exceptions.ResourceNotFoundException: Scientist not found for this id = 66

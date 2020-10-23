@@ -7,12 +7,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
@@ -31,8 +31,8 @@ public class Category {
     @JsonBackReference
     private List<Article> articles;
 
-    public Category(String name, List<Article> articles) {
+    public Category(String name) {
         this.name = name;
-        this.articles = articles;
+        this.articles = new ArrayList<>();
     }
 }

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @JsonIdentityInfo(
         generator = ObjectIdGenerators.PropertyGenerator.class,
         property = "id"
@@ -54,21 +53,13 @@ public class Article {
         this.journal = journal;
     }
 
-    //    // TODO: how to have entire Category object here?
-//    @Column(name = "category_id")
-//    private int category_id;
-//
-//    // TODO: how to have entire Journal object here?
-//    @Column(name = "journal_id")
-//    private int journal_id;
-
-//    public Article(int scientistId, String title, String link, int rating, int category_id, int journal_id) {
-//        this.scientistId = scientistId;
+//    public Article(String title, String link, int rating) {
+//        this.scientist = null;
 //        this.title = title;
 //        this.link = link;
 //        this.rating = rating;
-//        this.category_id = category_id;
-//        this.journal_id = journal_id;
+//        this.category = null;
+//        this.journal = null;
 //    }
 
 }
